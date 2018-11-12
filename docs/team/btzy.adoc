@@ -4,6 +4,7 @@
 :stylesDir: ../stylesheets
 :sectnums:
 :sectnumlevels: 6
+:1H: #
 
 == PROJECT: Deadline Manager
 
@@ -31,7 +32,7 @@ Deadline Manager is a desktop deadline manager application designed for students
 * *Other contributions*:
 
 ** Project management:
-*** Contributed to user stories on GitHub issue tracker (https://github.com/CS2103-AY1819S1-W17-4/main/issues/9[#9], https://github.com/CS2103-AY1819S1-W17-4/main/issues/10[#10], https://github.com/CS2103-AY1819S1-W17-4/main/issues/11[#11], https://github.com/CS2103-AY1819S1-W17-4/main/issues/12[#12], https://github.com/CS2103-AY1819S1-W17-4/main/issues/21[#21], https://github.com/CS2103-AY1819S1-W17-4/main/issues/22[#22])
+*** Contributed to user stories on GitHub issue tracker ([underline]#{1H}9#, [underline]#{1H}10#, [underline]#{1H}11#, [underline]#{1H}12#, [underline]#{1H}21#, [underline]#{1H}22#)
 *** Manage milestones on GitHub
 ** Enhancements to existing features:
 *** Overhauled the existing command parser to use a custom-made string tokenizer shared with the filter expression parser in order to support additional features such as quoted strings.  Almost all commands now depend on this string tokenizer.
