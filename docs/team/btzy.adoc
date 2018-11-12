@@ -5,10 +5,9 @@
 :sectnums:
 :sectnumlevels: 6
 :1H: #
+:stylesheet: alternate-btzy.css
 
-== PROJECT: Deadline Manager
-
----
+[big]#Project: Deadline Manager#
 
 == Overview
 
@@ -31,12 +30,8 @@ Deadline Manager is a desktop deadline manager application designed for students
 
 * *Other contributions*:
 
-** Project management:
-*** Contributed to user stories on GitHub issue tracker ([underline]#{1H}9#, [underline]#{1H}10#, [underline]#{1H}11#, [underline]#{1H}12#, [underline]#{1H}21#, [underline]#{1H}22#)
-*** Manage milestones on GitHub
-** Enhancements to existing features:
-*** Overhauled the existing command parser to use a custom-made string tokenizer shared with the filter expression parser in order to support additional features such as quoted strings.  Almost all commands now depend on this string tokenizer.
-*** Remove uniqueness constraints and weak equality in the underlying model.
+** Project management: Contributed to user stories on GitHub issue tracker ([underline]#{1H}9#, [underline]#{1H}10#, [underline]#{1H}11#, [underline]#{1H}12#, [underline]#{1H}21#, [underline]#{1H}22#); managed milestones on GitHub
+** Enhancements to existing features: Overhauled the existing command parser to use a custom-made string tokenizer shared with the filter expression parser in order to support additional features such as quoted strings.  Almost all commands now depend on this string tokenizer.
 ** Community:
 *** Reviewed pull requests (with non-trivial review comments): https://github.com/CS2103-AY1819S1-W17-4/main/pull/92[#92], https://github.com/CS2103-AY1819S1-W17-4/main/pull/154[#154]
 *** Contributed to forum discussions (examples:  https://github.com/nus-cs2103-AY1819S1/forum/issues/127[1])
@@ -49,15 +44,15 @@ Deadline Manager is a desktop deadline manager application designed for students
 |_Given below are excerpts of sections that I contributed to the user guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=filter-overview]
+include::../UserGuide-btzy.adoc[tag=filter-overview]
 
-include::../UserGuide.adoc[tag=filter-simplified]
+include::../UserGuide-btzy.adoc[tag=filter-simplified]
 
 |===
 |_Details of the simplified filter syntax have been omitted for brievity.  Please see our https://cs2103-ay1819s1-w17-4.github.io/main/UserGuide.html#simplified-filter-syntax[user guide] for more details and command examples._
 |===
 
-include::../UserGuide.adoc[tag=filter-field]
+include::../UserGuide-btzy.adoc[tag=filter-field]
 
 The operator `:` is known as the *convenience* operator -- it is an alias for the operator that intuitively "does what you expect" for the given `key`.
 
@@ -75,13 +70,13 @@ For example, `filter n:assignment | (p:3 & t:CS2101)` will return a subset of th
 |_For more explanation on using composition of filter predicates effectively, please visit our https://cs2103-ay1819s1-w17-4.github.io/main/UserGuide.html#composing-filter-predicates[user guide].  More examples are also available there._
 |===
 
-include::../UserGuide.adoc[tag=filter-set]
+include::../UserGuide-btzy.adoc[tag=filter-set]
 
 |===
 |_For more examples, please visit our https://cs2103-ay1819s1-w17-4.github.io/main/UserGuide.html#composing-filter-predicates[user guide]._
 |===
 
-include::../UserGuide.adoc[tag=filter-errors]
+include::../UserGuide-btzy.adoc[tag=filter-errors]
 
 |===
 |_Many of my contributions to the user guide have been omitted for brevity.  Please visit https://cs2103-ay1819s1-w17-4.github.io/main/UserGuide.html#filtering-a-list-of-tasks-code-filter-code[this link] for the full user guide._
@@ -95,49 +90,57 @@ include::../UserGuide.adoc[tag=filter-errors]
 |_Given below are excerpts of sections that I contributed to the developer guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=filter-ppp-prefix]
-include::../DeveloperGuide.adoc[tag=filter-ppp-overview-header]
+include::../DeveloperGuide-btzy.adoc[tag=filter-ppp-prefix]
+include::../DeveloperGuide-btzy.adoc[tag=filter-ppp-overview-header]
 
 |===
 |_For a more detailed overview of the filter feature, please visit our https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#overview[developer guide]._
 |===
 
-include::../DeveloperGuide.adoc[tag=filter-overview-condensed]
+include::../DeveloperGuide-btzy.adoc[tag=filter-overview-condensed]
 
 |===
 |_For more details on the general string tokenizer that was specially designed for the filter command, please visit our https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#string-tokenizer[developer guide]._
 |===
 
-==== Boolean exp
+==== Boolean expression parser
+
+|===
+|_The boolean expression parser uses the shunting yard algorithm to compose NOT, AND, and OR operators, and respects operator precedence.  For more information, please visit our https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#string-tokenizer[developer guide]._
+|===
 
 ==== Filter unit parser
 
 The filter unit parser is written as a lambda expression inside the `FilterCommandParser` class.  This lambda expression then calls `FilterCommandParser#createFilterUnit`, which contains most of the logic for the filter unit parser.
 
-include::../DeveloperGuide.adoc[tag=filter-unit-parser-extract]
+include::../DeveloperGuide-btzy.adoc[tag=filter-unit-parser-extract]
 
 |===
 |_The extended full syntax for sets and the simplified syntax are explained in our https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#filter-unit-parser[developer guide]._
 |===
 
-include::../DeveloperGuide.adoc[tag=filter-unit-parser-diagram]
+include::../DeveloperGuide-btzy.adoc[tag=filter-unit-parser-diagram]
 
 |===
 |_More explanation on the "field identifier", "filter operator", "set operator", and "test phrase" are available in our https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#filter-feature[developer guide].  Please follow the link for more information._
 |===
 
-include::../DeveloperGuide.adoc[tag=filter-error-messages]
+==== Error messages
+
+include::../DeveloperGuide-btzy.adoc[tag=filter-error-messages]
+
+In the diagram above, the [blue]#*blue*# classes are exceptions thrown by `StringTokenizer`, while the [red]#*red*# classes are exceptions thrown by `BooleanExpressionParser`.
 
 |===
 |_More explanation on the use of `TokenizationInvalidPredicateException` is available in our https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#filter-feature[developer guide]._
 |===
 
-include::../DeveloperGuide.adoc[tag=filter-design-considerations-header]
+include::../DeveloperGuide-btzy.adoc[tag=filter-design-considerations-header]
 
-include::../DeveloperGuide.adoc[tag=filter-design-considerations-convenience]
+include::../DeveloperGuide-btzy.adoc[tag=filter-design-considerations-convenience]
 
-include::../DeveloperGuide.adoc[tag=filter-design-considerations-exceptions]
+include::../DeveloperGuide-btzy.adoc[tag=filter-design-considerations-exceptions]
 
 |===
-|_Many of my contributions to the user guide have been omitted for brevity.  Please visit https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#filter-feature[this link] for the full developer guide._
+|_Many of my contributions to the developer guide have been omitted for brevity.  Please visit https://cs2103-ay1819s1-w17-4.github.io/main/DeveloperGuide.html#filter-feature[this link] for the full developer guide._
 |===
