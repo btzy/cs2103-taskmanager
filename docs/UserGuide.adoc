@@ -273,9 +273,9 @@ Returns a subset of the current list of tasks that have a name, tag, attachment,
 // tag::filter-field[]
 ==== Controlling the field being matched
 
-Each keyword can instead be written as a _full predicate_, which is a string of the following format: `<key><operator><phrase>`. The following diagram is an example of a typical full predicate:
+image::FilterUnitDiagramUG.png[width="200",role="thumb right"]
 
-image::FilterUnitDiagramUG.png[width="200"]
+Each keyword can instead be written as a _full predicate_, which is a string of the following format: `<key><operator><phrase>`. The diagram on the right is an example of a typical full predicate.
 
 Each of the three parts of a full predicate means the following:
 
@@ -504,9 +504,9 @@ Returns a subset of the current list of tasks that have a name that does not con
 // tag::filter-set[]
 ==== Set-based extensions for filter predicates
 
-For fields that represent a collection (i.e. tags and attachments), it is also possible to filter only tasks which **do not contain** other tags or attachments apart from those specified.  To do so, we introduce a set operator as per the diagram below:
+image::FilterUnitDiagramSetUG.png[width="250",role="thumb right"]
 
-image::FilterUnitDiagramSetUG.png[width="250"]
+For fields that represent a collection (i.e. tags and attachments), it is also possible to filter only tasks which **do not contain** other tags or attachments apart from those specified.  To do so, we introduce a set operator as per the diagram on the right.
 
 The part that was called `operator` previously is called the `field operator` here, and it retains its original meaning.  The `set operator` introduced here specifies how the specified set (in the filter predicate) compares to the task's set (of tags or attachments).
 
