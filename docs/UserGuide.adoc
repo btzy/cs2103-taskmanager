@@ -214,6 +214,8 @@ When executing any _modifying_ commands on a filtered list, the filter will be r
 
 ==== Overview
 
+image::userguide/filterdemo_simplified.png[FilterDemo_Simplified, width="300",float=right]
+
 Filter predicates are the core of the `filter` command.  Each filter predicate specifies a testable condition that, for every task, may evaluate to either `true` or `false` (e.g. whether the deadline is earlier than 1/10/2018).  Filter predicates are regarded as "indivisible".
 
 // end::filter-overview[]
@@ -230,13 +232,7 @@ However, when there are many tasks in the deadline manager and the simplified sy
 
 Tasks can be filtered by typing `filter` followed by one or more space-separated keywords (e.g. `filter assignment`, `filter homework CS2103`, or `filter badminton utown 3/10/2018`).  Such a filter expression would display only those tasks that contain textual or date fields (i.e. name, deadline, tags, and attachments) that matches **every** keyword (e.g. `filter homework CS2103` will match a task with name `Homework 1` **and** tags `CS2103` and `easy`).
 
-The following screenshot is an example to demonstrate that any field may be matched:
-
-[filterdemo_simplified]
-.Result of `filter assignment` command (notice that the keyword "assignment" matches task name, tags, and attachments)
-[#img-filterdemo_simplified]
-[caption="Figure 3.6.2.1: "]
-image::userguide/filterdemo_simplified.png[FilterDemo_Simplified, width="300"]
+The screenshot on the right is an example to demonstrate that any field may be matched.
 
 // end::filter-simplified[]
 
@@ -273,7 +269,7 @@ Returns a subset of the current list of tasks that have a name, tag, attachment,
 // tag::filter-field[]
 ==== Controlling the field being matched
 
-image::FilterUnitDiagramUG.png[width="200",role="thumb right"]
+image::FilterUnitDiagramUG.png[width="120",role="thumb right"]
 
 Each keyword can instead be written as a _full predicate_, which is a string of the following format: `<key><operator><phrase>`. The diagram on the right is an example of a typical full predicate.
 
@@ -504,7 +500,7 @@ Returns a subset of the current list of tasks that have a name that does not con
 // tag::filter-set[]
 ==== Set-based extensions for filter predicates
 
-image::FilterUnitDiagramSetUG.png[width="250",role="thumb right"]
+image::FilterUnitDiagramSetUG.png[width="150",role="thumb right"]
 
 For fields that represent a collection (i.e. tags and attachments), it is also possible to filter only tasks which **do not contain** other tags or attachments apart from those specified.  To do so, we introduce a set operator as per the diagram on the right.
 
